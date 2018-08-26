@@ -16,4 +16,6 @@ class EnigmaTest < Minitest::Test
     assert_equal "this is so secret ..end..",
      enigma.my_message
   end
+
+  
 end

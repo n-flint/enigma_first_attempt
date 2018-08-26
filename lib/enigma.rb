@@ -4,7 +4,7 @@ class Enigma
   attr_reader :array,
               :my_message,
               :current_date
-  def intialize
+  def initialize
     @array = ["a", "b", "c", "d", "e",
               "f", "g", "h", "i", "j",
               "k", "l", "m", "n", "o",
@@ -14,15 +14,11 @@ class Enigma
               "4", "5", "6", "7", "8",
               "9", " ", ".", ","]
     @my_message   = my_message
-    @current_date = Time.now.strftime("%d%m%y")
+
   end
   binding.pry
 
-  def time
-    @current_date.last ^ 2
-    #want to take integers from current_date
-    #square root and use last 4 digits in array
-  end
+
 
   def encrypt
 
