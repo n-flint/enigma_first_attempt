@@ -5,8 +5,10 @@ require './lib/offset'
 class Enigma
   attr_reader :array,
               :my_message,
-              :final_rotation_a
-  def initialize
+              :key_rotation,
+              :offset_rotation
+
+  def initialize(my_message)
     @array = ["a", "b", "c", "d", "e",
               "f", "g", "h", "i", "j",
               "k", "l", "m", "n", "o",
@@ -15,21 +17,35 @@ class Enigma
               "z", "0", "1", "2", "3",
               "4", "5", "6", "7", "8",
               "9", " ", ".", ","]
-    @my_message   = my_message
-
+    @my_message       = my_message
+    @key_rotation     = Key.new
+    @offset_rotation  = Offset.new
   end
 
-
-
   def encrypt
-
+    new_message = []
+    my_message.map do |message|
+      message.chars
+    # binding.pry
   end
 
   def final_rotation_a
-    final_rotation_a = a_rotation + rotation_a
-    binding.pry
+    @key_rotation.a_rotation + @offset_rotation.rotation_a
+  end
+
+  def final_rotation_b
+    @key_rotation.b_rotation + @offset_rotation.rotation_b
+  end
+
+  def final_rotation_c
+    @key_rotation.c_rotation + @offset_rotation.rotation_c
+  end
+
+  def final_rotation_d
+    @key_rotation.d_rotation + @offset_rotation.rotation_d
   end
 
 end
 
+# binding.pry
 # e = Enigma.new

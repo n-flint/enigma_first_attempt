@@ -1,15 +1,12 @@
 require 'date'
 
 class Offset
-
-attr_reader :current_date
+  attr_reader :current_date
 
   def initialize
-
   @current_date = Time.now.strftime("%d%m%y").to_i
 
   end
-
 
   def last4
     date_squared = @current_date ** 2
