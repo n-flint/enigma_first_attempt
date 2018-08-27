@@ -11,10 +11,11 @@ class KeyTest < Minitest::Test
     assert_instance_of Key, key
   end
 
-  def test_show_key_array
+  def test_number_in_key
     key = Key.new
-# binding.pry
-    assert_equal ["9", "7", "5", "2", "8"], key.num
+    assert_equal 5, key.num.length
   end
+
+
 
 end

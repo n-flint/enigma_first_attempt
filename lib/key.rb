@@ -1,15 +1,19 @@
+require 'pry'
+
 class Key
   attr_reader     :num
 
   def initialize
     @num          = [rand(1..9), rand(1..9), rand(1..9),
                      rand(1..9), rand(1..9)]
+
   end
 
 
   def a_rotation
     a = @num[0].to_s + @num[1].to_s
     a.to_i
+    binding.pry
   end
 
   def b_rotation
@@ -27,3 +31,5 @@ class Key
     d.to_i
   end
 end
+
+# binding.pry

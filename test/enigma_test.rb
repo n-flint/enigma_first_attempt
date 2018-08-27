@@ -1,6 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/enigma'
+require './lib/offset'
+require './lib/key'
 require 'date'
 
 class EnigmaTest < Minitest::Test
@@ -17,5 +19,17 @@ class EnigmaTest < Minitest::Test
      enigma.my_message
   end
 
-  
+def test_final_rotation_a
+    enigma = Enigma.new
+    assert_equal 12, enigma.final_rotation_a
+
+
+end
+
+
+
+
+
+
+
 end

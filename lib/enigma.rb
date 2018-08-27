@@ -1,9 +1,11 @@
 require 'pry'
+require './lib/key'
+require './lib/offset'
 
 class Enigma
   attr_reader :array,
               :my_message,
-              :current_date
+              :final_rotation_a
   def initialize
     @array = ["a", "b", "c", "d", "e",
               "f", "g", "h", "i", "j",
@@ -16,13 +18,18 @@ class Enigma
     @my_message   = my_message
 
   end
-  binding.pry
 
 
 
   def encrypt
 
   end
+
+  def final_rotation_a
+    final_rotation_a = a_rotation + rotation_a
+    binding.pry
+  end
+
 end
 
 # e = Enigma.new
