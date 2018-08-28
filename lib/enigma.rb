@@ -8,7 +8,7 @@ class Enigma
               :key_rotation,
               :offset_rotation
 
-  def initialize(my_message)
+  def initialize
     @array = ["a", "b", "c", "d", "e",
               "f", "g", "h", "i", "j",
               "k", "l", "m", "n", "o",
@@ -23,11 +23,18 @@ class Enigma
   end
 
   def encrypt
-    new_message = []
-    my_message.map do |message|
-      message.chars
-    # binding.pry
+    # new_message = []
+    # new_message = @my_message.chars
+    #
   end
+
+  def new_array(my_message)
+    new_array = []
+    my_message.each_slice(4) do |slice|
+    new_array << slice
+    end
+  end
+  binding.pry
 
   def final_rotation_a
     @key_rotation.a_rotation + @offset_rotation.rotation_a
