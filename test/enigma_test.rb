@@ -9,27 +9,34 @@ class EnigmaTest < Minitest::Test
   def test_it_exists
     enigma = Enigma.new
     assert_instance_of Enigma, enigma
-
   end
 
-  def test_method_feedback
+  def test_encrypt_method
     skip
     enigma = Enigma.new
-    assert_equal "this is so secret ..end..",
-     enigma.my_message
+    assert_equal "this is so secret ..end..", enigma.encrypt
   end
 
-def test_final_rotation_a
+  def test_new_array_returns_value
+    enigma = Enigma.new("this")
+    assert_equal ["t", "h", "i", "s"], enigma.new_array
+  end
+
+  def test_method_my_message
+    skip
     enigma = Enigma.new
-    assert_equal 12, enigma.final_rotation_a
+    # my_message = "this is so secret ..end.."
+    assert_equal "this is so secret ..end..", enigma.my_message
+  end
 
+  def test_final_rotation_a
+    enigma = Enigma.new
+    refute_equal 0, enigma.final_rotation_a
+  end
 
-end
-
-
-
-
-
-
+  def test_final_rotation_b
+    enigma = Enigma.new
+    refute_equal 0, enigma.final_rotation_b
+  end
 
 end
