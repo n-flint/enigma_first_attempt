@@ -13,7 +13,6 @@ class Key
   def a_rotation
     a = @num[0].to_s + @num[1].to_s
     a.to_i
-    # binding.pry
   end
 
   def b_rotation

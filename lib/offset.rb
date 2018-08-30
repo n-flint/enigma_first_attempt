@@ -1,4 +1,5 @@
 require 'date'
+require 'pry'
 
 class Offset
   attr_reader :current_date
@@ -11,8 +12,6 @@ class Offset
   def last4
     date_squared = @current_date ** 2
     date_last4 = date_squared.to_s[-4..-1]
-    #want to take integers from current_date
-    #square root and use last 4 digits in array
   end
 
   def rotation_a
